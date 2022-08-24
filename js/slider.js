@@ -13,10 +13,12 @@ const app = new Vue({
 	data: {
 		slides,
 		active: 0,
-		alt: 'Immagine ' + this.active,
 		interval: ''
 	},
 	methods: {
+		setAlt() {
+			return 'Immagine ' + (this.active + 1);
+		},
 		prevSlide() {
 			if (!this.active) this.active = this.slides.length - 1;
 			else this.active--;
