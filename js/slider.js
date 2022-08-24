@@ -32,7 +32,7 @@ const app = new Vue({
 			clearInterval(this.interval);
 		}
 	},
-	mounted() {
+	mounted: function () {
 		this.nextSlideTiming();
 	}
 })
