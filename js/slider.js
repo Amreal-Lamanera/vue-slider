@@ -13,16 +13,26 @@ const app = new Vue({
 	data: {
 		slides,
 		active: 0,
-		alt: 'Immagine ' + this.active
+		alt: 'Immagine ' + this.active,
+		interval: ''
 	},
 	methods: {
 		prevSlide() {
-			if (!this.active) this.active = this.slides.length - 1
-			else this.active--
+			if (!this.active) this.active = this.slides.length - 1;
+			else this.active--;
 		},
 		nextSlide() {
-			if (this.active === this.slides.length - 1) this.active = 0
-			else this.active++
+			if (this.active === this.slides.length - 1) this.active = 0;
+			else this.active++;
+		},
+		nextSlideTiming() {
+			this.interval = setInterval(this.nextSlide, 3000);
+		},
+		stopInterval() {
+			clearInterval(this.interval);
 		}
+	},
+	mounted() {
+		this.nextSlideTiming();
 	}
 })

@@ -20,7 +20,7 @@
     <main>
       <div class="container" id="app">
 
-        <div class="slider">
+        <div class="slider" @mouseenter="stopInterval" @mouseleave="nextSlideTiming">
 
           <ul class="slides-wrapper">
 

@@ -44,5 +44,9 @@ ul {
 	right: 0;
 	transform: translateY(-50%);
 	color: tomato;
+}
+
+.arrow-prev,
+.arrow-next {
 	cursor: pointer;
 }
