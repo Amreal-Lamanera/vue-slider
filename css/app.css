@@ -50,3 +50,24 @@ ul {
 .arrow-next {
 	cursor: pointer;
 }
+
+.pointers-wrapper {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	transform: translatex(-50%);
+	display: flex;
+}
+
+.pointer {
+	background-color: gray;
+	border: 1px solid black;
+	border-radius: 50%;
+	width: 1rem;
+	aspect-ratio: 1;
+	margin-right: 0.5rem;
+}
+
+.pointer.active {
+	background-color: tomato;
+}
