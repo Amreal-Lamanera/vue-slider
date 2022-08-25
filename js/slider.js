@@ -20,12 +20,17 @@ const app = new Vue({
 			return 'Immagine ' + (this.active + 1);
 		},
 		prevSlide() {
-			if (!this.active) this.active = this.slides.length - 1;
-			else this.active--;
+			this.active = this.isStart() ? this.slides.length - 1 : this.active - 1;
 		},
 		nextSlide() {
-			if (this.active === this.slides.length - 1) this.active = 0;
-			else this.active++;
+			this.active = this.isEnd() ? 0 : this.active + 1;
+		},
+		isEnd() {
+			const lastIndex = this.slides.length - 1;
+			return this.active === lastIndex;
+		},
+		isStart() {
+			return !this.active;
 		},
 		nextSlideTiming() {
 			this.interval = setInterval(this.nextSlide, 3000);
